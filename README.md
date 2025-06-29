@@ -1,68 +1,85 @@
-# DATA-COMPRESSION-TOOLS
+COMPANY : CODTECH IT SOLUTIONS
 
-*NAME* : ANKUSH KUMAR
+NAME : ANKUSH KUMAR
 
-*INTERN ID* : CT04DF1328
+INTERN ID : CT04DF1328
 
-*DOMAIN* : C PROGRAMMING
+DOMAIN : C PROGRAMMING
 
-*DURATION* : 4 WEEKS
+DURATION : 4 WEEKS
 
-*MENTOR NAME* : NEELA SANTHOSH KUMAR
+MENTOR NAME : NEELA SANTHOSH KUMAR
 
-##*Data Compression – A Detailed Description 
+File Handling – A Detailed Description
 
-Data compression is a technique used to reduce the size of digital data. It allows us to store and transmit information more efficiently by using fewer bits than the original representation. Whether it's saving space on a hard drive, speeding up file transfers, or reducing bandwidth usage, data compression plays a vital role in the modern digital world.
+File handling is an essential concept in programming that allows us to store, retrieve, and manipulate data in files on a computer. Without file handling, any data entered during the execution of a program would be lost once the program ends. File handling provides a way to save data permanently for later use.
 
-### What is Data Compression?
+What is File Handling?
+File handling refers to the process of performing operations on a file, such as creating, opening, reading, writing, and closing files. These operations allow programs to interact with files stored on a storage device like a hard disk or memory card.
 
-At its core, data compression involves encoding information in such a way that it takes up less space. For example, instead of storing “AAAAA”, compression methods can represent it as “5A”. The idea is to identify patterns, repetitions, or redundancies in data and replace them with shorter representations.
+In C, and many other programming languages, files can be of two main types:
 
-### Types of Data Compression
+Text Files – These store data in readable characters (like .txt files).
+Binary Files – These store data in binary form (like images, audio, or .exe files), which is not human-readable.
+Why is File Handling Important?
+Data Storage: Files allow the storage of large amounts of data permanently.
+Data Retrieval: Data can be read from a file whenever required, even after the program ends.
+Efficiency: Working with files makes applications more powerful and interactive.
+Real-World Usage: Used in banking software, student management systems, document editing, and more.
+Basic File Operations
+Most programming languages support the following basic file operations:
 
-Data compression is mainly of two types:
+Create a File – Make a new file on disk.
+Open a File – Access a file for reading or writing.
+Read from File – Get data from the file into the program.
+Write to File – Save data from the program to the file.
+Close the File – Disconnect the program from the file after use.
+File Handling in C (Example)
+In C language, file operations are done using the FILE pointer and functions from the stdio.h library.
 
-1. *Lossless Compression*
-   In this method, no data is lost during compression. The original data can be perfectly reconstructed from the compressed data. This is useful for text, software files, or any content where accuracy is critical.
-   *Examples*: ZIP files, PNG images, Run-Length Encoding (RLE), Huffman coding.
+Opening a File
+c FILE *fp; fp = fopen("data.txt", "r"); // Open for reading
 
-2. *Lossy Compression*
-   This method removes some parts of the data that are less important, especially in media files like images, videos, or audio. The decompressed file may not be identical to the original, but the difference is usually unnoticeable to humans.
-   *Examples*: JPEG images, MP3 audio, MP4 videos.
+Modes:
 
-### Why is Compression Important?
+"r" – Read
+"w" – Write (overwrites if file exists)
+"a" – Append
+"rb", "wb", "ab" – Binary versions of above
+Writing to a File
+c FILE *fp = fopen("data.txt", "w"); fprintf(fp, "Hello, World!"); fclose(fp);
 
-1. *Saves Storage Space*: Compressed files take up less space on hard drives and memory devices.
-2. *Speeds up Transfer*: Smaller files are faster to upload, download, or send over the internet.
-3. *Reduces Bandwidth Usage*: Helps websites and apps load faster and use less data.
-4. *Improves Performance*: Compression is used in many applications like databases, cloud storage, streaming services, and mobile apps to enhance efficiency.
+Reading from a File
+c FILE *fp = fopen("data.txt", "r"); char ch; while ((ch = fgetc(fp)) != EOF) { printf("%c", ch); } fclose(fp);
 
-### Common Compression Techniques
+Closing a File
+Always use fclose(file_pointer); to release resources after file use.
 
-* *Run-Length Encoding (RLE)*: Replaces repeated characters or patterns with a count and a single character. For example, “AAAAA” becomes “5A”.
-* *Huffman Coding*: Assigns shorter binary codes to frequently occurring characters and longer codes to less frequent ones.
-* *Lempel-Ziv-Welch (LZW)*: A dictionary-based algorithm used in formats like GIF and ZIP files.
-* *Transform Coding* (used in lossy): Converts data into another form and then compresses it. Used in JPEG and MP3 formats.
+Common Functions Used
+fopen() – Opens a file.
+fclose() – Closes the file.
+fgetc() / fputc() – Reads or writes one character.
+fgets() / fputs() – Reads or writes a string.
+fread() / fwrite() – Used for binary file read/write.
+fprintf() / fscanf() – Works like printf and scanf, but with files.
+Errors in File Handling
+Some common issues include:
 
-### Real-Life Applications
+File not found (fopen() returns NULL)
+Incorrect file path or permissions
+Forgetting to close the file (fclose())
+Always check if the file was opened successfully:
 
-* *Text Compression*: ZIP, RAR files to reduce the size of documents.
-* *Image Compression*: JPEG and PNG to reduce photo sizes.
-* *Audio Compression*: MP3 and AAC for songs and recordings.
-* *Video Compression*: MP4 and AVI for reducing the size of movies and video clips.
-* *Web Compression*: Websites use gzip or Brotli to load pages faster.
+c if (fp == NULL) { printf("Error opening file!\n"); }
 
-### Challenges in Compression
+Real-Life Applications of File Handling
+Saving user data in games
+Creating reports or logs
+Managing student or employee records
+Reading configuration settings
+Backup and restore operations
+Conclusion
+File handling is a crucial concept that allows data to be stored and retrieved effectively. Whether you’re making a simple text editor or a complex data management system, file handling enables your programs to be more useful and dynamic. Mastering file handling lays a strong foundation for learning databases, data structures, and software development in general.
 
-* *Trade-off Between Quality and Size*: In lossy compression, reducing file size too much may lower quality.
-* *Speed vs. Efficiency*: Some algorithms compress well but are slow. Others are fast but give less compression.
-* *Hardware Limits*: Devices with low processing power may struggle with complex compression algorithms.
-
-### Conclusion
-
-Data compression is a crucial part of digital technology. It helps manage large amounts of data, saves space, speeds up communication, and enables better user experiences. As the world continues to produce more digital content, efficient compression techniques will become even more important.
-
-Whether you're downloading an app, watching a YouTube video, or sending an email, data compression is silently working in the background to make it all faster and more efficient.
-
-#OUTPUT 
-![Image](https://github.com/user-attachments/assets/adc9ae2f-6a70-44f5-8bf4-9a59c2a5c231)
+#OUTPUT
+![Screenshot 2025-06-30 013952](https://github.com/user-attachments/assets/e2f5d5e1-c3ef-4695-9e55-55a811929ada)
